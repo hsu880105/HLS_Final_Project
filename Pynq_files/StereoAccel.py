@@ -70,8 +70,9 @@ if __name__ == "__main__":
     timeKernelEnd = time()
     print("Kernel execution time: " + str(timeKernelEnd - timeKernelStart) + " s")
     
-    cmd = ipAccel.read(0x20)
-    print("cmd:{}".format(cmd))
+    cmd_low = ipAccel.read(0x20)
+    cmd_high = ipAccel.read(0x24)
+    print("cmd:{}, {}".format(cmd_low,cmd_high))
 
     print("============================")
     print("Exit process")
